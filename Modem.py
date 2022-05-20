@@ -1,8 +1,8 @@
 from typing import Dict, Tuple, List
 
-from ModemManagerWrapper.MMInterface import MMInterface
-from ModemManagerWrapper.ModemManager import ModemManager
-from ModemManagerWrapper.MMEnum import MMModemPowerState, MMModemCapability, MMModemBand, MMModemPortType, MMModemLock, \
+from MMInterface import MMInterface
+from ModemManager import ModemManager
+from MMEnums import MMModemPowerState, MMModemCapability, MMModemBand, MMModemPortType, MMModemLock, \
     MMModemState, MMModemStateFailedReason, MMModemAccessTechnology, MMModemMode, MMBearerIpFamily
 
 

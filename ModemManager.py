@@ -3,8 +3,8 @@ from typing import List, Tuple, Dict
 from gi.repository import GLib
 from pydbus import SystemBus
 
-from ModemManagerWrapper.MMInterface import MMInterface
-from ModemManagerWrapper.Modem import Modem
+from MMInterface import MMInterface
+from Modem import Modem
 
 
 class ModemManager(MMInterface):

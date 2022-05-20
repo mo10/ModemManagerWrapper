@@ -1,7 +1,7 @@
 from typing import Dict, Tuple
 
-from ModemManagerWrapper.MMInterface import MMInterface
-from ModemManagerWrapper.ModemManager import ModemManager
+from MMInterface import MMInterface
+from ModemManager import ModemManager
 
 
 class Barer(MMInterface):
