@@ -3,9 +3,10 @@ from typing import Dict
 if __name__ == '__main__':
     f = open(file='./enums.h')
 
-    result = 'from enum import Enum'
+    result = 'import enum'
 
-    enum_type = ''
+    enum_name = ''
+    enum_type = 'enum.Enum'
     enum_desc = ''
     enums: Dict[str, Dict[str, str]] = dict()
 
@@ -14,7 +15,8 @@ if __name__ == '__main__':
         if len(line) == 0:
             continue
         if '/**' == line:
-            enum_type = ''
+            enum_name = ''
+            enum_type = 'enum.Enum'
             enum_desc = ''
             enums = dict()
             result +='\n\n'
@@ -38,10 +40,10 @@ if __name__ == '__main__':
             continue
         if line.startswith('} '):
             # enum end
-            enum_type = line[2:-1]
-            enum_desc = enum_desc[len(enum_type) + 4 + 2+4+1:-1]  # remove first name +\n\n last \n
+            enum_name = line[2:-1]
+            enum_desc = enum_desc[len(enum_name) + 4 + 2+4+1:-1]  # remove first name +\n\n last \n
             result += f'''
-class {enum_type}(Enum):
+class {enum_name}({enum_type}):
     """
     {enum_desc}
     """
@@ -57,6 +59,8 @@ class {enum_type}(Enum):
         key, value = line.replace(',', '').split('=', 1)
         key = key.strip()
         value = value.strip()
+        if '<<' in value:
+            enum_type = 'enum.Flag'
 
         if key in enums.keys():
             enums[key]['value'] = value

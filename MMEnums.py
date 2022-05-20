@@ -1,7 +1,7 @@
-from enum import Enum
+import enum
 
 
-class MMModemCapability(Enum):
+class MMModemCapability(enum.Flag):
     """
     Flags describing one or more of the general access technology families that a
     modem supports.
@@ -43,7 +43,7 @@ class MMModemCapability(Enum):
     """
 
 
-class MMModemLock(Enum):
+class MMModemLock(enum.Enum):
     """
     Enumeration of possible lock reasons.
 
@@ -120,7 +120,7 @@ class MMModemLock(Enum):
     """
 
 
-class MMModemState(Enum):
+class MMModemState(enum.Enum):
     """
     Enumeration of possible modem states.
 
@@ -181,7 +181,7 @@ class MMModemState(Enum):
     """
 
 
-class MMModemStateFailedReason(Enum):
+class MMModemStateFailedReason(enum.Enum):
     """
     Enumeration of possible errors when the modem is in @MM_MODEM_STATE_FAILED.
 
@@ -206,7 +206,7 @@ class MMModemStateFailedReason(Enum):
     """
 
 
-class MMModemPowerState(Enum):
+class MMModemPowerState(enum.Enum):
     """
     Power state of the modem.
 
@@ -231,7 +231,7 @@ class MMModemPowerState(Enum):
     """
 
 
-class MMModemStateChangeReason(Enum):
+class MMModemStateChangeReason(enum.Enum):
     """
     Enumeration of possible reasons to have changed the modem state.
 
@@ -256,7 +256,7 @@ class MMModemStateChangeReason(Enum):
     """
 
 
-class MMModemAccessTechnology(Enum):
+class MMModemAccessTechnology(enum.Flag):
     """
     Describes various access technologies that a device uses when registered with
     or connected to a network.
@@ -338,7 +338,7 @@ class MMModemAccessTechnology(Enum):
     """
 
 
-class MMModemMode(Enum):
+class MMModemMode(enum.Flag):
     """
     Bitfield to indicate which access modes are supported, allowed or
     preferred in a given device.
@@ -376,7 +376,7 @@ class MMModemMode(Enum):
     """
 
 
-class MMModemBand(Enum):
+class MMModemBand(enum.Enum):
     """
     Radio bands supported by the device when connecting to a mobile network.
 
@@ -880,7 +880,7 @@ class MMModemBand(Enum):
     """
 
 
-class MMModemPortType(Enum):
+class MMModemPortType(enum.Enum):
     """
     Type of modem port.
 
@@ -925,7 +925,7 @@ class MMModemPortType(Enum):
     """
 
 
-class MMSmsPduType(Enum):
+class MMSmsPduType(enum.Enum):
     """
     Type of PDUs used in the SMS.
 
@@ -974,7 +974,7 @@ class MMSmsPduType(Enum):
     """
 
 
-class MMSmsState(Enum):
+class MMSmsState(enum.Enum):
     """
     State of a given SMS.
 
@@ -1007,7 +1007,7 @@ class MMSmsState(Enum):
     """
 
 
-class MMSmsDeliveryState(Enum):
+class MMSmsDeliveryState(enum.Enum):
     """
     Enumeration of known SMS delivery states as defined in 3GPP TS 03.40 and
     3GPP2 N.S0005-O, section 6.5.2.125.
@@ -1347,7 +1347,7 @@ class MMSmsDeliveryState(Enum):
     """
 
 
-class MMSmsStorage(Enum):
+class MMSmsStorage(enum.Enum):
     """
     Storage for SMS messages.
 
@@ -1384,7 +1384,7 @@ class MMSmsStorage(Enum):
     """
 
 
-class MMSmsValidityType(Enum):
+class MMSmsValidityType(enum.Enum):
     """
     Type of SMS validity value.
 
@@ -1409,7 +1409,7 @@ class MMSmsValidityType(Enum):
     """
 
 
-class MMSmsCdmaTeleserviceId(Enum):
+class MMSmsCdmaTeleserviceId(enum.Enum):
     """
     Teleservice IDs supported for CDMA SMS, as defined in 3GPP2 X.S0004-550-E
     (section 2.256) and 3GPP2 C.S0015-B (section 3.4.3.1).
@@ -1455,7 +1455,7 @@ class MMSmsCdmaTeleserviceId(Enum):
     """
 
 
-class MMSmsCdmaServiceCategory(Enum):
+class MMSmsCdmaServiceCategory(enum.Enum):
     """
     Service category for CDMA SMS, as defined in 3GPP2 C.R1001-D (section 9.3).
 
@@ -1612,7 +1612,7 @@ class MMSmsCdmaServiceCategory(Enum):
     """
 
 
-class MMModemLocationSource(Enum):
+class MMModemLocationSource(enum.Flag):
     """
     Sources of location information supported by the modem.
 
@@ -1653,7 +1653,7 @@ class MMModemLocationSource(Enum):
     """
 
 
-class MMModemLocationAssistanceDataType(Enum):
+class MMModemLocationAssistanceDataType(enum.Flag):
     """
     Type of assistance data that may be injected to the GNSS module.
 
@@ -1670,7 +1670,7 @@ class MMModemLocationAssistanceDataType(Enum):
     """
 
 
-class MMModemContactsStorage(Enum):
+class MMModemContactsStorage(enum.Enum):
     """
     Specifies different storage locations for contact information.
 
@@ -1695,7 +1695,7 @@ class MMModemContactsStorage(Enum):
     """
 
 
-class MMBearerType(Enum):
+class MMBearerType(enum.Enum):
     """
     efined by the user of the API.
     during LTE attach procedure, automatically connected as long as the device is
@@ -1727,7 +1727,7 @@ class MMBearerType(Enum):
     """
 
 
-class MMBearerIpMethod(Enum):
+class MMBearerIpMethod(enum.Enum):
     """
     or IPv6, use PPP to retrieve the 64-bit Interface Identifier, use the IID to
     construct an IPv6 link-local address by following RFC 5072, and then run
@@ -1763,7 +1763,7 @@ class MMBearerIpMethod(Enum):
     """
 
 
-class MMBearerIpFamily(Enum):
+class MMBearerIpFamily(enum.Flag):
     """
     Type of IP family to be used in a given Bearer.
 
@@ -1792,7 +1792,7 @@ class MMBearerIpFamily(Enum):
     """
 
 
-class MMBearerAllowedAuth(Enum):
+class MMBearerAllowedAuth(enum.Flag):
     """
     Allowed authentication methods when authenticating with the network.
 
@@ -1829,7 +1829,7 @@ class MMBearerAllowedAuth(Enum):
     """
 
 
-class MMModemCdmaRegistrationState(Enum):
+class MMModemCdmaRegistrationState(enum.Enum):
     """
     Registration state of a CDMA modem.
 
@@ -1854,7 +1854,7 @@ class MMModemCdmaRegistrationState(Enum):
     """
 
 
-class MMModemCdmaActivationState(Enum):
+class MMModemCdmaActivationState(enum.Enum):
     """
     Activation state of a CDMA modem.
 
@@ -1883,7 +1883,7 @@ class MMModemCdmaActivationState(Enum):
     """
 
 
-class MMModemCdmaRmProtocol(Enum):
+class MMModemCdmaRmProtocol(enum.Enum):
     """
     Protocol of the Rm interface in modems with CDMA capabilities.
 
@@ -1916,7 +1916,7 @@ class MMModemCdmaRmProtocol(Enum):
     """
 
 
-class MMModem3gppRegistrationState(Enum):
+class MMModem3gppRegistrationState(enum.Enum):
     """
     GSM registration code as defined in 3GPP TS 27.007.
 
@@ -1973,7 +1973,7 @@ class MMModem3gppRegistrationState(Enum):
     """
 
 
-class MMModem3gppFacility(Enum):
+class MMModem3gppFacility(enum.Flag):
     """
     A bitfield describing which facilities have a lock enabled, i.e.,
     requires a pin or unlock code. The facilities include the
@@ -2021,7 +2021,7 @@ class MMModem3gppFacility(Enum):
     """
 
 
-class MMModem3gppNetworkAvailability(Enum):
+class MMModem3gppNetworkAvailability(enum.Enum):
     """
     Network availability status as defined in 3GPP TS 27.007 section 7.3.
 
@@ -2046,7 +2046,7 @@ class MMModem3gppNetworkAvailability(Enum):
     """
 
 
-class MMModem3gppSubscriptionState(Enum):
+class MMModem3gppSubscriptionState(enum.Enum):
     """
     Describes the current subscription status of the SIM.  This value is only available after the
     modem attempts to register with the network.
@@ -2072,7 +2072,7 @@ class MMModem3gppSubscriptionState(Enum):
     """
 
 
-class MMModem3gppUssdSessionState(Enum):
+class MMModem3gppUssdSessionState(enum.Enum):
     """
     State of a USSD session.
 
@@ -2097,7 +2097,7 @@ class MMModem3gppUssdSessionState(Enum):
     """
 
 
-class MMModem3gppEpsUeModeOperation(Enum):
+class MMModem3gppEpsUeModeOperation(enum.Enum):
     """
     UE mode of operation for EPS, as per 3GPP TS 24.301.
 
@@ -2126,7 +2126,7 @@ class MMModem3gppEpsUeModeOperation(Enum):
     """
 
 
-class MMFirmwareImageType(Enum):
+class MMFirmwareImageType(enum.Enum):
     """
     Type of firmware image.
 
@@ -2147,7 +2147,7 @@ class MMFirmwareImageType(Enum):
     """
 
 
-class MMOmaFeature(Enum):
+class MMOmaFeature(enum.Flag):
     """
     Features that can be enabled or disabled in the OMA device management support.
 
@@ -2172,7 +2172,7 @@ class MMOmaFeature(Enum):
     """
 
 
-class MMOmaSessionType(Enum):
+class MMOmaSessionType(enum.Enum):
     """
     Type of OMA device management session.
 
@@ -2213,7 +2213,7 @@ class MMOmaSessionType(Enum):
     """
 
 
-class MMOmaSessionState(Enum):
+class MMOmaSessionState(enum.Enum):
     """
     State of the OMA device management session.
 
@@ -2270,7 +2270,7 @@ class MMOmaSessionState(Enum):
     """
 
 
-class MMOmaSessionStateFailedReason(Enum):
+class MMOmaSessionStateFailedReason(enum.Enum):
     """
     Reason of failure in the OMA device management session.
 
@@ -2303,7 +2303,7 @@ class MMOmaSessionStateFailedReason(Enum):
     """
 
 
-class MMCallState(Enum):
+class MMCallState(enum.Enum):
     """
     State of Call.
 
@@ -2344,7 +2344,7 @@ class MMCallState(Enum):
     """
 
 
-class MMCallStateReason(Enum):
+class MMCallStateReason(enum.Enum):
     """
     Reason for the state change in the call.
 
@@ -2393,7 +2393,7 @@ class MMCallStateReason(Enum):
     """
 
 
-class MMCallDirection(Enum):
+class MMCallDirection(enum.Enum):
     """
     Direction of the call.
 
@@ -2414,7 +2414,7 @@ class MMCallDirection(Enum):
     """
 
 
-class MMModemFirmwareUpdateMethod(Enum):
+class MMModemFirmwareUpdateMethod(enum.Flag):
     """
     Type of firmware update method supported by the module.
 
@@ -2443,7 +2443,7 @@ class MMModemFirmwareUpdateMethod(Enum):
     """
 
 
-class MMBearerMultiplexSupport(Enum):
+class MMBearerMultiplexSupport(enum.Enum):
     """
     Multiplex support requested by the user.
 
@@ -2468,7 +2468,7 @@ class MMBearerMultiplexSupport(Enum):
     """
 
 
-class MMBearerApnType(Enum):
+class MMBearerApnType(enum.Flag):
     """
     Purpose of the APN used in a given Bearer.
 
