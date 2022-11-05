@@ -1,8 +1,8 @@
 from typing import Tuple
 
-from MMInterface import MMInterface
-from ModemManager import ModemManager
-from MMEnums import MMSmsState, MMSmsPduType, MMSmsCdmaTeleserviceId, MMSmsCdmaServiceCategory, MMSmsDeliveryState, \
+from .MMInterface import MMInterface
+from .ModemManager import ModemManager
+from .MMEnums import MMSmsState, MMSmsPduType, MMSmsCdmaTeleserviceId, MMSmsCdmaServiceCategory, MMSmsDeliveryState, \
     MMSmsStorage, MMSmsValidityType
 
 

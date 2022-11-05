@@ -1,8 +1,8 @@
 from typing import Dict
 
-from MMInterface import MMInterface
-from ModemManager import ModemManager
-from MMEnums import MMCallState, MMCallStateReason, MMCallDirection
+from .MMInterface import MMInterface
+from .ModemManager import ModemManager
+from .MMEnums import MMCallState, MMCallStateReason, MMCallDirection
 
 
 class Call(MMInterface):
